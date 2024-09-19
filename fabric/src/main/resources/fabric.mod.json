@@ -9,7 +9,8 @@
         "ABU009"
     ],
     "contact": {
-        "homepage": ""
+        "sources": "https://github.com/ABU008/Legacy-Bob",
+        "issues": "https://github.com/ABU008/Legacy-Bob/issues"
     },
     "license": "MIT",
     "environment": "*",
