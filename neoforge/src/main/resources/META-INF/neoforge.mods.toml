@@ -1,0 +1,33 @@
+modLoader = "javafml"
+loaderVersion = "[2,)"
+#issueTrackerURL = ""
+license = "MIT"
+
+[[mods]]
+logoFile = "logo.png"
+modId = "legacybob"
+version = "${version}"
+displayName = "LegacyBob"
+authors = "ABU009"
+description = '''
+ViewBobbing from 1.12 and below!
+'''
+#logoFile = ""
+
+[[dependencies.legacybob]]
+modId = "neoforge"
+type = "required"
+versionRange = "[21,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.legacybob]]
+modId = "minecraft"
+type = "required"
+versionRange = "[1.21.1, )"
+ordering = "NONE"
+side = "BOTH"
+
+
+[[mixins]]
+config = "legacybob.mixins.json"

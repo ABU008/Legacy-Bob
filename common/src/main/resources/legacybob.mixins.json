@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "package": "legacybob.oebwf2ij.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "minVersion": "0.8",
+  "client": [
+  ],
+  "mixins": [
+      "PlayerMixin",
+      "GameRendererMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
