@@ -9,10 +9,10 @@ modId = "legacybob"
 version = "${version}"
 displayName = "LegacyBob"
 authors = "ABU009"
+displayURL = "https://github.com/ABU008/Legacy-Bob"
 description = '''
 ViewBobbing from 1.12 and below!
 '''
-#logoFile = ""
 
 [[dependencies.legacybob]]
 modId = "neoforge"
