@@ -16,7 +16,7 @@
 ## 🔄 Mod Compatibility
 
 This mod is designed to work with:
-- **NeoForge**: version 21.1.1. or newer.
+- **NeoForge**: version 21.0.143. or newer.
 - **Fabric**: version 0.12.0. or newer with Fabric API.
 - **Quilt**: version 0.26.0. or newer with Fabric API
 
