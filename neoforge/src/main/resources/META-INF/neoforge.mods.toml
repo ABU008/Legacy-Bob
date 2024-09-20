@@ -24,7 +24,7 @@ side = "BOTH"
 [[dependencies.legacybob]]
 modId = "minecraft"
 type = "required"
-versionRange = "[1.21.1, )"
+versionRange = "[1.21, )"
 ordering = "NONE"
 side = "BOTH"
 
