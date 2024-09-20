@@ -6,7 +6,7 @@
 [<img alt="quilt" height="56" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/supported/quilt_vector.svg">](https://quiltmc.org)
 [<img alt="neoforge" height="56" src="https://github.com/user-attachments/assets/bd8eb5c4-aa7f-4e6b-9b2c-f566f3a0852a">](https://neoforged.net/)
 
-**LegacyBob** is a mod that implements view bobbing from before 1.13. It's compatible with both Fabric and NeoForge mod loaders and supports Minecraft version 1.21.x and beyond.
+**LegacyBob** is a mod that implements view bobbing from before 1.13. It's compatible with both Fabric and NeoForge mod loaders and supports Minecraft version 1.21.x.
 
 ## 📝 Features
 - Restores the view bobbing mechanic from earlier versions of Minecraft.
