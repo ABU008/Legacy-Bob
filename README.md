@@ -22,4 +22,4 @@ This mod is designed to work with:
 
 **This mod is currently in beta.**
 If you encounter any issues, bugs, or unexpected behavior, please report them immediately via the [issues section](https://github.com/ABU008/Legacy-Bob/issues).
-Your feedback helps us improve the mod for future releases!
+Your feedback helps improve the mod for future releases!
