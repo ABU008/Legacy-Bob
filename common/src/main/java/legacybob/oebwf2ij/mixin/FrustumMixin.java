@@ -32,8 +32,8 @@ public class FrustumMixin {
     private Matrix4f adjustProjectionFOV(Matrix4f projectionMatrix) {
         Matrix4f adjustedMatrix = new Matrix4f(projectionMatrix);
 
-        adjustedMatrix.m00(adjustedMatrix.m00() * 0.70f);
-        adjustedMatrix.m11(adjustedMatrix.m11() * 0.70f);
+        adjustedMatrix.m00(adjustedMatrix.m00() * 0.65f);
+        adjustedMatrix.m11(adjustedMatrix.m11() * 0.65f);
 
         return adjustedMatrix;
     }
