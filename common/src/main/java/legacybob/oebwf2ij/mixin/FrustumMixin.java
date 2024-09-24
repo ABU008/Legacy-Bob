@@ -29,6 +29,7 @@ public class FrustumMixin {
         this.intersection.set(this.matrix);
     }
 
+    @Unique
     private Matrix4f adjustProjectionFOV(Matrix4f projectionMatrix) {
         Matrix4f adjustedMatrix = new Matrix4f(projectionMatrix);
 
