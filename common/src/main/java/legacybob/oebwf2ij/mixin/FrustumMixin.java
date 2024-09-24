@@ -16,11 +16,12 @@ public class FrustumMixin {
     @Shadow
     private Matrix4f matrix;
     /**
-     * @author author
-     * @reason reason
+     * @author ABU008
+     * @reason To fix culling issues when falling
      */
     @Overwrite
     public void calculateFrustum(Matrix4f viewMatrix, Matrix4f projectionMatrix) {
+
         Matrix4f adjustedProjectionMatrix = adjustProjectionFOV(projectionMatrix);
 
         adjustedProjectionMatrix.mul(viewMatrix, this.matrix);
@@ -31,9 +32,8 @@ public class FrustumMixin {
     private Matrix4f adjustProjectionFOV(Matrix4f projectionMatrix) {
         Matrix4f adjustedMatrix = new Matrix4f(projectionMatrix);
 
-        // Decrease values on diagonal to simulate an increased FOV in frustum
-        adjustedMatrix.m00(adjustedMatrix.m00() * 0.65f);  // Adjust horizontal FOV (X-axis)
-        adjustedMatrix.m11(adjustedMatrix.m11() * 0.65f);  // Adjust vertical FOV (Y-axis)
+        adjustedMatrix.m00(adjustedMatrix.m00() * 0.70f);
+        adjustedMatrix.m11(adjustedMatrix.m11() * 0.70f);
 
         return adjustedMatrix;
     }
