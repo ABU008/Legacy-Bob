@@ -16,14 +16,15 @@ public class FrustumMixin {
     @Final
     @Shadow
     private Matrix4f matrix;
-    @Shadow
-    private Vector4f viewVector;
+
+    @Shadow private Vector4f viewVector;
+
     /**
      * @author ABU008
      * @reason To fix culling issues when falling
      */
     @Overwrite
-    public void calculateFrustum(Matrix4f viewMatrix, Matrix4f projectionMatrix) {
+    private void calculateFrustum(Matrix4f viewMatrix, Matrix4f projectionMatrix) {
 
         Matrix4f adjustedProjectionMatrix = adjustProjectionFOV(projectionMatrix);
 
@@ -32,7 +33,7 @@ public class FrustumMixin {
         this.intersection.set(this.matrix);
 
         this.viewVector = new Vector4f(0.0F, 0.0F, 1.0F, 0.0F);
-        this.viewVector = this.matrix.transformTranspose(this.viewVector);
+        this.viewVector = matrix.transformTranspose(viewVector);
     }
 
     @Unique
