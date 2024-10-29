@@ -1,8 +1,8 @@
 package legacybob.oebwf2ij.Bobbing;
 
 public interface LegacyBobbing {
-    float $yBob();
-    float $prevYBob();
-    void $setYBob(float bob);
-    void $setPrevYBob(float bob);
+    float legacybob$yBob();
+    float legacybob$prevYBob();
+    void legacybob$setYBob(float bob);
+    void legacybob$setPrevYBob(float bob);
 }
