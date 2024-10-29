@@ -26,7 +26,7 @@ public class FrustumMixin {
     @Overwrite
     private void calculateFrustum(Matrix4f viewMatrix, Matrix4f projectionMatrix) {
 
-        Matrix4f adjustedProjectionMatrix = adjustProjectionFOV(projectionMatrix);
+        Matrix4f adjustedProjectionMatrix = legacybob$adjustProjectionFOV(projectionMatrix);
 
         adjustedProjectionMatrix.mul(viewMatrix, this.matrix);
 
@@ -37,7 +37,7 @@ public class FrustumMixin {
     }
 
     @Unique
-    private Matrix4f adjustProjectionFOV(Matrix4f projectionMatrix) {
+    private Matrix4f legacybob$adjustProjectionFOV(Matrix4f projectionMatrix) {
         Matrix4f adjustedMatrix = new Matrix4f(projectionMatrix);
 
         adjustedMatrix.m00(adjustedMatrix.m00() * 0.65f);

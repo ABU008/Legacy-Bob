@@ -17,12 +17,11 @@ public abstract class GameRendererMixin implements LegacyBobbing {
 
     @Final
     @Shadow
-    Minecraft minecraft;
+    private Minecraft minecraft;
     @Inject(method = "bobView", at = @At("RETURN"))
     private void bobView(PoseStack poseStack, float partialTick, CallbackInfo ci) {
         if (this.minecraft.getCameraEntity() instanceof LegacyBobbing p) {
-            LegacyBobbing legacyBobbing = (LegacyBobbing) p;
-            float angle = Mth.lerp(partialTick, legacyBobbing.$prevYBob(), legacyBobbing.$yBob());
+            float angle = Mth.lerp(partialTick, p.legacybob$prevYBob(), p.legacybob$yBob());
 
             poseStack.mulPose(Axis.XP.rotationDegrees(angle));
         }
