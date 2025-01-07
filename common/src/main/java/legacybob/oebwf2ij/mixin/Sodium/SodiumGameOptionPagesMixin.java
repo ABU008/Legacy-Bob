@@ -23,7 +23,7 @@ import java.util.List;
 
 @Mixin(SodiumGameOptionPages.class)
 public class SodiumGameOptionPagesMixin {
-    @Shadow
+    @Shadow(remap = false)
     @Final
     private static final MinecraftOptionsStorage vanillaOpts = new MinecraftOptionsStorage();
 
