@@ -6,9 +6,11 @@
   "client": [
   ],
   "mixins": [
-      "GameRendererMixin",
-      "PlayerMixin",
-      "FrustumMixin"
+    "FrustumMixin",
+    "GameRendererMixin",
+    "PlayerMixin",
+    "VideoSettingsScreenMixin",
+    "Sodium.SodiumGameOptionPagesMixin"
   ],
   "injectors": {
     "defaultRequire": 1

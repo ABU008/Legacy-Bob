@@ -1,5 +1,6 @@
 package legacybob.oebwf2ij.mixin;
 
+import legacybob.oebwf2ij.Legacybob;
 import com.mojang.math.Axis;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.GameRenderer;
@@ -12,6 +13,7 @@ import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import legacybob.oebwf2ij.Bobbing.LegacyBobbing;
+
 @Mixin(GameRenderer.class)
 public abstract class GameRendererMixin implements LegacyBobbing {
 
@@ -20,10 +22,12 @@ public abstract class GameRendererMixin implements LegacyBobbing {
     private Minecraft minecraft;
     @Inject(method = "bobView", at = @At("RETURN"))
     private void bobView(PoseStack poseStack, float partialTick, CallbackInfo ci) {
-        if (this.minecraft.getCameraEntity() instanceof LegacyBobbing p) {
-            float angle = Mth.lerp(partialTick, p.legacybob$prevYBob(), p.legacybob$yBob());
+        if (Legacybob.getHandBob().get()) {
+            if (this.minecraft.getCameraEntity() instanceof LegacyBobbing p) {
+                float angle = Mth.lerp(partialTick, p.legacybob$prevYBob(), p.legacybob$yBob());
 
-            poseStack.mulPose(Axis.XP.rotationDegrees(angle));
+                poseStack.mulPose(Axis.XP.rotationDegrees(angle));
+            }
         }
     }
 }
