@@ -17,9 +17,3 @@
 This mod is designed to work with:
 - **NeoForge**: version 20.6.115. or newer.
 - **Fabric**: version 0.12.0. or newer with Fabric API.
-
-## ⚠️ Warning: Beta Version ⚠️
-
-**This mod is currently in beta.**
-If you encounter any issues, bugs, or unexpected behavior, please report them immediately via the [issues section](https://github.com/ABU008/Legacy-Bob/issues).
-Your feedback helps improve the mod for future releases!
