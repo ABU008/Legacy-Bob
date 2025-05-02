@@ -29,7 +29,7 @@ dependencies {
 
     modImplementation "net.fabricmc.fabric-api:fabric-api:$rootProject.fabric_api_version"
 
-    modImplementation "maven.modrinth:sodium:mc1.21.4-0.6.6-fabric"
+    modImplementation "maven.modrinth:sodium:$rootProject.sodium_version"
 
     common(project(path: ':common', configuration: 'namedElements')) { transitive false }
     shadowBundle project(path: ':common', configuration: 'transformProductionFabric')

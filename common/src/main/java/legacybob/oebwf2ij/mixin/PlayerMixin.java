@@ -45,17 +45,6 @@ public abstract class PlayerMixin extends LivingEntity implements LegacyBobbing 
 
     @Inject(method = "aiStep", at = @At(value = "FIELD", target = "Lnet/minecraft/world/entity/player/Player;bob:F", opcode = Opcodes.PUTFIELD, shift = At.Shift.AFTER))
     public void aiStep(CallbackInfo ci) {
-        this.legacybob$setPrevYBob(this.legacybob$yBob());
-
-        double deltaY = this.getDeltaMovement().y;
-        float rotation = (float) (Math.atan(-deltaY * 0.20000000298023224D) * 15.0D);
-        boolean isGrounded = deltaY < -0.07 && deltaY > -0.08 && !this.getBlockStateOn().isAir();
-
-        if (this.onGround() || this.getHealth() <= 0.0F || isGrounded)
-            rotation = 0.0F;
-
-        float current = this.legacybob$yBob();
-
-        this.legacybob$setYBob(current + ((rotation - current) * 0.8F));
+        handleYBobbing();
     }
 }
