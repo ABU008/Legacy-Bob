@@ -1,7 +1,7 @@
 package legacybob.oebwf2ij.mixin;
 
 import legacybob.oebwf2ij.Legacybob;
-import net.minecraft.client.gui.screens.options.VideoSettingsScreen;
+import net.minecraft.client.gui.screens.VideoSettingsScreen;
 import net.minecraft.client.Options;
 import net.minecraft.client.OptionInstance;
 import org.apache.commons.lang3.ArrayUtils;
