@@ -1,48 +1,25 @@
 package legacybob.oebwf2ij.mixin;
 
+import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
 import net.minecraft.client.renderer.culling.Frustum;
 import org.joml.Matrix4f;
-import org.joml.FrustumIntersection;
-import org.joml.Vector4f;
 import org.spongepowered.asm.mixin.*;
+import org.spongepowered.asm.mixin.injection.At;
 
 @Mixin(Frustum.class)
 public class FrustumMixin {
+    @Shadow @Final private Matrix4f matrix;
 
-    @Final
-    @Shadow
-    private FrustumIntersection intersection;
-
-    @Final
-    @Shadow
-    private Matrix4f matrix;
-
-    @Shadow private Vector4f viewVector;
-
-    /**
-     * @author ABU008
-     * @reason To fix culling issues when falling
-     */
-    @Overwrite
-    private void calculateFrustum(Matrix4f viewMatrix, Matrix4f projectionMatrix) {
-
-        Matrix4f adjustedProjectionMatrix = legacybob$adjustProjectionFOV(projectionMatrix);
-
-        adjustedProjectionMatrix.mul(viewMatrix, this.matrix);
-
-        this.intersection.set(this.matrix);
-
-        this.viewVector = new Vector4f(0.0F, 0.0F, 1.0F, 0.0F);
-        this.viewVector = matrix.transformTranspose(viewVector);
+    @ModifyExpressionValue(method = "calculateFrustum",at = @At(value = "INVOKE", target = "Lorg/joml/Matrix4f;mul(Lorg/joml/Matrix4fc;Lorg/joml/Matrix4f;)Lorg/joml/Matrix4f;", remap = false))
+    private Matrix4f calculateFrustum(Matrix4f original, Matrix4f right, Matrix4f matrix4f2) {
+        return legacybob$adjustProjectionFOV(matrix4f2).mul(right, matrix);
     }
 
     @Unique
     private Matrix4f legacybob$adjustProjectionFOV(Matrix4f projectionMatrix) {
         Matrix4f adjustedMatrix = new Matrix4f(projectionMatrix);
-
         adjustedMatrix.m00(adjustedMatrix.m00() * 0.65f);
         adjustedMatrix.m11(adjustedMatrix.m11() * 0.65f);
-
         return adjustedMatrix;
     }
 }
