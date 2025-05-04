@@ -17,7 +17,7 @@ ViewBobbing from 1.12 and below!
 [[dependencies.legacybob]]
 modId = "neoforge"
 type = "required"
-versionRange = "[20.6.115, 20.6.134]"
+versionRange = "[20.6.115, 20.6.135]"
 ordering = "NONE"
 side = "BOTH"
 
