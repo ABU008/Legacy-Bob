@@ -17,14 +17,14 @@ ViewBobbing from 1.12 and below!
 [[dependencies.legacybob]]
 modId = "neoforge"
 type = "required"
-versionRange = "[21.0.143,)"
+versionRange = "[21.0.143, )"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.legacybob]]
 modId = "minecraft"
 type = "required"
-versionRange = "[1.21, )"
+versionRange = "[1.21, 1.21.4]"
 ordering = "NONE"
 side = "BOTH"
 
